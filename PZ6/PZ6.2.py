@@ -1,12 +1,22 @@
 #Дан список A размера N. Сформировать новый список B того же размера по следующему правилу: элемент BK равен среднему арифметическому элементов списка A с номерами от 1 до K.
-
-print("\nЗадача 2")
-A = [2, 4, 6, 8, 10]  
-print("Список A:", A)
-B = []
-sum_k = 0
-for i in range(len(A)):
-    sum_k += A[i]
-    average = sum_k / (i + 1)
-    B.append(average)
-print("Список B:", B)
+print("\nЗадание 2")
+try:
+    N = int(input("Размер списка: "))
+    if N <= 0:
+        print("Ошибка: размер > 0")
+    else:
+        A = [random.randint(1, 10) for _ in range(N)]
+        print("Исходный A:", A)
+        
+        B = []
+        for K in range(N):
+            total = 0
+            for i in range(K+1):
+                total += A[i]
+            average = total / (K+1)
+            B.append(round(average, 2))
+        
+        print("Список B:", B)
+        
+except ValueError:
+    print("Ошибка ввода")
