@@ -1,17 +1,16 @@
 # Дано вещественное число A и целое число N (>0). Найти A в степени N: AN = AA ... •A (числа A перемножаются N раз).
-print("=== Задача 1 ===")
+print("Задание 1: Возведение в степень")
 try:
-    A = int(input("Введите A: "))
-    B = int(input("Введите B (B > A): "))
+    A = float(input("Введите число A: "))
+    N = int(input("Введите степень N (N > 0): "))
     
-    if A >= B:
-        print("Ошибка: A должно быть меньше B")
+    if N <= 0:
+        print("Ошибка: N должно быть больше 0")
     else:
-        count = 0
-        print("Числа от A до B:")
-        for num in range(A, B + 1):
-            print(num, end=" ")
-            count += 1
-        print(f"\nКоличество чисел: {count}")
-except:
+        result = 1
+        for i in range(N):
+            result = result * A
+        print(f"Результат: {result}")
+        
+except ValueError:
     print("Ошибка ввода!")
