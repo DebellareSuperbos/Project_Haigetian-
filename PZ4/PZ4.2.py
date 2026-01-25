@@ -1,29 +1,23 @@
 #Дано целое число N (>0). С помощью операций деления нацело и взятия остатка от деления определить, имеются ли в записи числа N нечетные цифры. Если имеются, то вывести TRUE, если нет — вывести FALSE.
 
-print("\n=== Задача 2 ===")
+print("\nЗадание 2: Проверка нечетных цифр")
 try:
-    A = float(input("Введите сторону A: "))
-    B = float(input("Введите сторону B: "))
-    C = float(input("Введите сторону квадрата C: "))
+    N = int(input("Введите число N (N > 0): "))
     
-    if A <= 0 or B <= 0 or C <= 0:
-        print("Все числа должны быть положительными!")
+    if N <= 0:
+        print("Ошибка: N должно быть больше 0")
     else:
-        width_count = 0
-        temp = 0
-        while temp + C <= A:
-            width_count += 1
-            temp += C
-          
-        height_count = 0
-        temp = 0
-        while temp + C <= B:
-            height_count += 1
-            temp += C
-        total = 0
-        for i in range(height_count):
-            total += width_count
+        has_odd = False
+        temp = N
         
-        print(f"Поместится квадратов: {total}")
-except:
+        while temp > 0:
+            digit = temp % 10  
+            if digit % 2 == 1: 
+                has_odd = True
+                break
+            temp = temp // 10  
+        
+        print(has_odd)  
+        
+except ValueError:
     print("Ошибка ввода!")
