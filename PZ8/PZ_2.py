@@ -12,10 +12,10 @@ height_dict = {
 }
 print("Словарь роста:")
 for name, height in height_dict.items():
-    print(name + ":", height, "см.")
+    print(name + height, "см.")
 
 max_height = max(height_dict.values())
 min_height = min(height_dict.values())
 
-print("\nНаибольший рост:", max_height, "см.")
+print("Наибольший рост:", max_height, "см.")
 print("Наименьший рост:", min_height, "см.")
