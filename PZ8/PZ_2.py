@@ -10,7 +10,7 @@ height_dict = {
     "Ольга": 158,
     "Дмитрий": 182
 }
-print("Словарь роста персон:")
+print("Словарь роста:")
 for name, height in height_dict.items():
     print(name + ":", height, "см.")
 
