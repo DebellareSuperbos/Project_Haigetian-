@@ -4,11 +4,19 @@
 
 import random
 
-N = 10
-nums = [random.randint(-10, 10) for _ in range(N)]
+N = int(input('Сколько чисел будет в списке? '))
+min_num = int(input('Введите минимальное число (например, -5): '))
+max_num = int(input('Введите максимальное число (например, 5): '))
+
+nums = [random.randint(min_num, max_num) for _ in range(N)]
 print('Исходные:', nums)
 
-sq = [x*x for x in nums if x % 2 == 0]
+sq = [x * x for x in nums if x % 2 == 0]
 print('Квадраты четных:', sq)
+
 print('Сумма:', sum(sq))
-print('Среднее:', sum(sq) / len(sq) if sq else 0)
+
+if sq:  
+    print('Среднее:', sum(sq) / len(sq))
+else:
+    print('Среднее: 0 (нет чётных чисел)')
