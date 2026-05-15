@@ -1,9 +1,11 @@
-#Из заданной строки отобразить только символы нижнего регистра.
-#Использовать библиотеку string. Строка 'In PyCharm, you can specify third-party standalone
-#applications and run them as External Tools'.
+#Составить генератор (yield), который преобразует все буквенные символы в заглавные.
 
-import string
-
-s = 'In PyCharm, you can specify third-party standalone applications and run them as External Tools'
-low = [c for c in s if c in string.ascii_lowercase]
-print(''.join(low))
+def upper(text):
+    for char in text:
+        if char.isalpha():
+            yield char.upper()
+        else:
+            yield char
+s = "абвгдеежзийклмнопрстуфхцчшщъыьэюя"
+result = upper(s)
+print(list(map(lambda x: x, result)))
