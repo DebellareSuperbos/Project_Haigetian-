@@ -1,14 +1,15 @@
-#Проверить истинность высказывания: «Треугольник со сторонами a, b, c является
-#равнобедренным».
-print("Задание 1: Проверка равнобедренного треугольника")
-a = int(input("Введите сторону a: "))
-b = int(input("Введите сторону b: "))
-c = int(input("Введите сторону c: "))
+#В матрицу найти среднее арифметическое элементов последних двух столбцов
 
-if a == b or a == c or b == c:
-    print("Треугольник равнобедренный: ДА")
-else:
-    print("Треугольник равнобедренный: НЕТ")
+import random
 
-except ValueError:
-    print("Ошибка! Введите целые числа.")
+rows = int(input())
+cols = int(input())
+matrix = [[random.randint(1, 10) for _ in range(cols)] for _ in range(rows)]
+items = [val for row in matrix for val in row[-2:]]
+
+avg = sum(items) / len(items)
+print("матрица:")
+for row in matrix: 
+  print(row)
+        
+print(f"Среднее последних двух столбцов: {avg}")
