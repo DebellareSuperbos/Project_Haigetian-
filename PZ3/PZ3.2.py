@@ -1,14 +1,16 @@
-#Даны три числа. Найти сумму двух наибольших из них
+#Перенести в новую матрицу Matr1 элементы, которые не находятся в первых и последних строках и столбцах матрицы Matr2 произвольного размера
 
-try:
-    x = int(input("Введите первое число: "))
-    y = int(input("Введите второе число: "))
-    z = int(input("Введите третье число: "))
-    
-    min_num = min(x, y, z)
-    
-    result = x + y + z - min_num
-    print(f"Сумма двух наибольших чисел: {result}")
-    
-except ValueError:
-    print("Ошибка! Введите целые числа.")
+import random
+rows = int(input())
+cols = int(input())
+Matr2 = [[random.randint(10, 99) for i in range(cols)] for i in range(rows)]
+
+print("Исходная матрица Matr2:")
+for r in Matr2: 
+  print(r)
+
+Matr1 = [row[1:-1] for row in Matr2[1:-1]]
+
+print("Результат Matr1:")
+for r in Matr1: 
+  print(r)
